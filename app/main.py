@@ -1,5 +1,7 @@
 from fastapi import FastAPI
+
 from app.core.config import settings
+from app.core.logging import logger
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -7,8 +9,15 @@ app = FastAPI(
 )
 
 
+@app.on_event("startup")
+def startup_event():
+    logger.info("Enterprise AI Knowledge Assistant started successfully.")
+
+
 @app.get("/")
 def home():
+    logger.info("Home endpoint accessed.")
+
     return {
         "message": f"Welcome to {settings.PROJECT_NAME}"
     }
@@ -16,6 +25,8 @@ def home():
 
 @app.get("/health")
 def health():
+    logger.info("Health endpoint accessed.")
+
     return {
         "status": "healthy"
     }
