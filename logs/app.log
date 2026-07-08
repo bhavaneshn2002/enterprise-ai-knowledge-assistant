@@ -87,3 +87,42 @@ FROM users
 WHERE users.id = %(pk_1)s
 2026-07-08 21:03:39,232 | INFO | [generated in 0.00334s] {'pk_1': 1}
 2026-07-08 21:03:39,244 | INFO | ROLLBACK
+2026-07-08 21:32:08,696 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 21:32:37,836 | INFO | select pg_catalog.version()
+2026-07-08 21:32:37,836 | INFO | [raw sql] {}
+2026-07-08 21:32:37,836 | INFO | select current_schema()
+2026-07-08 21:32:37,836 | INFO | [raw sql] {}
+2026-07-08 21:32:37,840 | INFO | show standard_conforming_strings
+2026-07-08 21:32:37,840 | INFO | [raw sql] {}
+2026-07-08 21:32:37,843 | INFO | BEGIN (implicit)
+2026-07-08 21:32:37,845 | INFO | INSERT INTO users (username, email, password) VALUES (%(username)s, %(email)s, %(password)s) RETURNING users.id, users.created_at, users.updated_at
+2026-07-08 21:32:37,845 | INFO | [generated in 0.00056s] {'username': 'alice', 'email': 'alice@gmail.com', 'password': '$2b$12$Li1/sZNk.hDilfb7vhPg1uEDcenFOeXTvxlwiBP562GpiStwdrkFu'}
+2026-07-08 21:32:37,850 | INFO | COMMIT
+2026-07-08 21:32:37,857 | INFO | BEGIN (implicit)
+2026-07-08 21:32:37,862 | INFO | SELECT users.id, users.username, users.email, users.password, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = %(pk_1)s
+2026-07-08 21:32:37,864 | INFO | [generated in 0.00138s] {'pk_1': 2}
+2026-07-08 21:32:37,874 | INFO | ROLLBACK
+2026-07-08 21:46:45,801 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 21:48:59,602 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 21:49:04,995 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 21:49:10,802 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 21:51:33,944 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 21:55:40,607 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 22:04:40,175 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 22:04:47,686 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 22:06:37,198 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 22:10:02,045 | INFO | select pg_catalog.version()
+2026-07-08 22:10:02,046 | INFO | [raw sql] {}
+2026-07-08 22:10:02,048 | INFO | select current_schema()
+2026-07-08 22:10:02,048 | INFO | [raw sql] {}
+2026-07-08 22:10:02,048 | INFO | show standard_conforming_strings
+2026-07-08 22:10:02,048 | INFO | [raw sql] {}
+2026-07-08 22:10:02,048 | INFO | BEGIN (implicit)
+2026-07-08 22:10:02,063 | INFO | SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password AS users_password, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+2026-07-08 22:10:02,064 | INFO | [generated in 0.00194s] {'email_1': 'john@gmail.com', 'param_1': 1}
+2026-07-08 22:10:02,766 | INFO | ROLLBACK
