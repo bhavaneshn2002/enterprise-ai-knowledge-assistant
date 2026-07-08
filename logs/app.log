@@ -41,3 +41,49 @@ FROM users
 WHERE users.id = %(pk_1)s
 2026-07-07 20:40:49,154 | INFO | [generated in 0.00144s] {'pk_1': 1}
 2026-07-07 20:40:49,154 | INFO | ROLLBACK
+2026-07-08 19:47:40,242 | INFO | BEGIN (implicit)
+2026-07-08 19:47:40,329 | INFO | INSERT INTO users (username, email) VALUES (%(username)s, %(email)s) RETURNING users.id
+2026-07-08 19:47:40,337 | INFO | [cached since 8.323e+04s ago] {'username': 'james', 'email': 'james@gmail.com'}
+2026-07-08 19:47:40,361 | INFO | ROLLBACK
+2026-07-08 19:47:56,471 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 19:47:59,643 | INFO | Home endpoint accessed.
+2026-07-08 19:48:19,846 | INFO | BEGIN (implicit)
+2026-07-08 19:48:19,850 | INFO | INSERT INTO users (username, email) VALUES (%(username)s, %(email)s) RETURNING users.id
+2026-07-08 19:48:19,877 | INFO | [cached since 8.327e+04s ago] {'username': 'string', 'email': 'user@example.com'}
+2026-07-08 19:48:19,997 | INFO | COMMIT
+2026-07-08 19:48:20,235 | INFO | BEGIN (implicit)
+2026-07-08 19:48:20,260 | INFO | SELECT users.id, users.username, users.email 
+FROM users 
+WHERE users.id = %(pk_1)s
+2026-07-08 19:48:20,269 | INFO | [cached since 8.327e+04s ago] {'pk_1': 3}
+2026-07-08 19:48:20,386 | INFO | ROLLBACK
+2026-07-08 19:51:59,906 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 19:52:01,112 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 20:16:40,089 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 20:16:49,529 | INFO | Home endpoint accessed.
+2026-07-08 20:35:05,410 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 20:53:51,320 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 20:53:59,651 | INFO | Home endpoint accessed.
+2026-07-08 20:55:53,460 | WARNING | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\bhava\enterprise-ai-knowledge-assistant\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-07-08 21:02:39,314 | INFO | Enterprise AI Knowledge Assistant started successfully.
+2026-07-08 21:03:38,852 | INFO | select pg_catalog.version()
+2026-07-08 21:03:38,953 | INFO | [raw sql] {}
+2026-07-08 21:03:38,975 | INFO | select current_schema()
+2026-07-08 21:03:39,073 | INFO | [raw sql] {}
+2026-07-08 21:03:39,087 | INFO | show standard_conforming_strings
+2026-07-08 21:03:39,092 | INFO | [raw sql] {}
+2026-07-08 21:03:39,094 | INFO | BEGIN (implicit)
+2026-07-08 21:03:39,100 | INFO | INSERT INTO users (username, email, password) VALUES (%(username)s, %(email)s, %(password)s) RETURNING users.id, users.created_at, users.updated_at
+2026-07-08 21:03:39,111 | INFO | [generated in 0.01079s] {'username': 'john', 'email': 'john@gmail.com', 'password': '$2b$12$Gl.vQXhR2rrH2H.XKyJPSeCXdT8IcX9c04CCfJ2dkAnxw0YGmajQO'}
+2026-07-08 21:03:39,135 | INFO | COMMIT
+2026-07-08 21:03:39,219 | INFO | BEGIN (implicit)
+2026-07-08 21:03:39,230 | INFO | SELECT users.id, users.username, users.email, users.password, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = %(pk_1)s
+2026-07-08 21:03:39,232 | INFO | [generated in 0.00334s] {'pk_1': 1}
+2026-07-08 21:03:39,244 | INFO | ROLLBACK
