@@ -6,6 +6,7 @@ from app.core.logging import logger
 # Import Routers
 from app.api.routes.user_routes import router as user_router
 from app.api.routes.auth_routes import router as auth_router
+from app.api.routes.document_routes import router as document_router
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -15,6 +16,7 @@ app = FastAPI(
 # Register Routers
 app.include_router(user_router)
 app.include_router(auth_router)
+app.include_router(document_router)
 
 
 @app.on_event("startup")
