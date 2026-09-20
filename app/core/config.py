@@ -8,6 +8,8 @@ class Settings(BaseSettings):
     SECRET_KEY: str
     DATABASE_URL: str
     DEBUG: bool = False
+    GEMINI_API_KEY: str
+
 
     model_config = SettingsConfigDict(
         env_file=".env",

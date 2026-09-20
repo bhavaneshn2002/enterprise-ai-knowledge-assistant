@@ -1,12 +1,12 @@
 from datetime import datetime, timezone
 
-from sqlalchemy import Column, DateTime, ForeignKey, Integer, String
+from sqlalchemy import Column, DateTime, ForeignKey, Integer, Text
 
 from app.database.base import Base
 
 
-class Document(Base):
-    __tablename__ = "documents"
+class DocumentChunk(Base):
+    __tablename__ = "document_chunks"
 
     id = Column(
         Integer,
@@ -14,29 +14,19 @@ class Document(Base):
         index=True
     )
 
-    filename = Column(
-        String,
+    document_id = Column(
+        Integer,
+        ForeignKey("documents.id"),
         nullable=False
     )
 
-    file_type = Column(
-        String,
-        nullable=False
-    )
-
-    file_path = Column(
-        String,
+    chunk_index = Column(
+        Integer,
         nullable=False
     )
 
     content = Column(
-    String,
-    nullable=True
-    )
-
-    uploaded_by = Column(
-        Integer,
-        ForeignKey("users.id"),
+        Text,
         nullable=False
     )
 

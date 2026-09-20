@@ -7,6 +7,8 @@ from app.core.logging import logger
 from app.api.routes.user_routes import router as user_router
 from app.api.routes.auth_routes import router as auth_router
 from app.api.routes.document_routes import router as document_router
+from app.api.routes.search_routes import router as search_router
+from app.api.routes.chat_routes import router as chat_router
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -17,6 +19,8 @@ app = FastAPI(
 app.include_router(user_router)
 app.include_router(auth_router)
 app.include_router(document_router)
+app.include_router(search_router)
+app.include_router(chat_router)
 
 
 @app.on_event("startup")

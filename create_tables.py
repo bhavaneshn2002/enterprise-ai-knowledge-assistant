@@ -4,6 +4,7 @@ from app.database.base import Base
 # Import all models here
 from app.models.user import User
 from app.models.document import Document
+from app.models.document_chunk import DocumentChunk
 
 print("Creating database tables...")
 
